@@ -18,18 +18,29 @@ public class BulletManager : MonoBehaviour
    
     private void buildBulletPool()
 	{
-        for(int i =0; i<bulletNumber; i++)
-		{
+        for (int i = 0; i < bulletNumber; i++)
+        {
+            Addbullet();
+        }
+	}
+
+    private void Addbullet()
+	{
+        
             var temp = Instantiate(bulletPrefab);
             temp.SetActive(false);
             temp.transform.parent = transform;
             bulletPool.Enqueue(temp);
 
-		}
-	}
-
+       
+    }
     public GameObject getBullet(Vector2 position)
 	{
+        if (bulletPool.Count < 1)
+        {
+            Addbullet();
+            bulletNumber++;
+        }
         var temp = bulletPool.Dequeue();
         temp.transform.position = position;
         temp.SetActive(true);
