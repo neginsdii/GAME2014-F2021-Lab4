@@ -7,13 +7,19 @@ public class EnemyBehaviour : MonoBehaviour
     [Header("Enemy Movement")]
     public Bounds movementBounds;
     public Bounds startRange;
+   
     private float startingPoint;
     private float randomSpeed;
-    // Start is called before the first frame update
+    private BulletManager bulletManager;
+    [Header("Bullets")]
+    public Transform bulletSpawn;
+    public int frameDelay;
+
     void Start()
     {
         randomSpeed = Random.Range(movementBounds.min, movementBounds.max);
         startingPoint = Random.Range(startRange.min, startRange.max);
+        bulletManager = GameObject.FindObjectOfType<BulletManager>();
     }
 
     // Update is called once per frame
@@ -21,4 +27,12 @@ public class EnemyBehaviour : MonoBehaviour
     {
         transform.position = new Vector2(Mathf.PingPong(Time.time, randomSpeed) + startingPoint, transform.position.y);
     }
+
+	private void FixedUpdate()
+	{
+		if(Time.frameCount % frameDelay ==0)
+		{
+            bulletManager.getBullet(bulletSpawn.position);
+		}
+	}
 }

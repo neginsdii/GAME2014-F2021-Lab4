@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 123871880895242079}
   - component: {fileID: 123871880895242076}
-  - component: {fileID: 123871880895242077}
   - component: {fileID: 210963489277839302}
+  - component: {fileID: 123871880895242077}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -29,7 +29,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 6379592992202096591}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -85,24 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &123871880895242077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 123871880895242050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 520bf626c6297e44e9694eff9f480f3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementBounds:
-    min: 0.4
-    max: 1
-  startRange:
-    min: -2.1
-    max: 2.1
 --- !u!61 &210963489277839302
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -129,3 +112,54 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.42, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &123871880895242077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123871880895242050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520bf626c6297e44e9694eff9f480f3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementBounds:
+    min: 0.4
+    max: 1
+  startRange:
+    min: -2.1
+    max: 2.1
+  bulletSpawn: {fileID: 6379592992202096591}
+  bulletPrefab: {fileID: 6725066429698847688, guid: a56837bc48f37d04b855e3fbe6b546e0, type: 3}
+  frameDelay: 10
+--- !u!1 &5661192873846983701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6379592992202096591}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6379592992202096591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5661192873846983701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.402, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 123871880895242079}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
