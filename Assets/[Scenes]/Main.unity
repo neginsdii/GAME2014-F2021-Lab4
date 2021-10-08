@@ -251,7 +251,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 412461416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8253ea6c4ab5198489ce961ce66acb0d, type: 3}
+  m_Script: {fileID: 11500000, guid: c1c6c3e7e10372b41b7abc26b4a4e63e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &412461419
@@ -299,8 +299,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 412461418}
-        m_TargetAssemblyTypeName: NextButtonBehaviour, Assembly-CSharp
-        m_MethodName: OnNexttButtonPressed
+        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+        m_MethodName: OnNextButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -726,7 +726,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1928005304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40249cf9ac716b549bfdca3cc58e3b3b, type: 3}
+  m_Script: {fileID: 11500000, guid: c1c6c3e7e10372b41b7abc26b4a4e63e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1928005307
@@ -774,7 +774,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1928005306}
-        m_TargetAssemblyTypeName: BackButtonBehavour, Assembly-CSharp
+        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
         m_MethodName: OnBackButtonPressed
         m_Mode: 1
         m_Arguments:
