@@ -11,18 +11,23 @@ public class PlayerBehaviour : MonoBehaviour
     public Bounds bounds;
     [Range(0.0f,100.0f)]
     public float horizontalForce;
-
+    private BulletManager bulletManager;
+    [Header("Player Attack")]
+    public Transform bulletSpawn;
+    public int frameDelay;
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        bulletManager = GameObject.FindObjectOfType<BulletManager>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         Move();
-        CheckBounds();
+        CheckBounds(); 
+        checkFire();
     }
 
 	private void Move()
@@ -44,6 +49,13 @@ public class PlayerBehaviour : MonoBehaviour
         {
             transform.position = new Vector2(bounds.max, transform.position.y);
 
+        }
+    }
+    private void checkFire()
+	{
+        if ((Time.frameCount % frameDelay == 0) && (Input.GetAxisRaw("Jump") > 0))
+        {
+            bulletManager.getBullet(bulletSpawn.position, BulletType.PLAYER);
         }
     }
 }
